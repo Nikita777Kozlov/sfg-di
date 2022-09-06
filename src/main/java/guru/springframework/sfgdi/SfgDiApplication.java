@@ -40,6 +40,17 @@ public class SfgDiApplication {
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
         System.out.println(constructorInjectedController.getGreeting());
+
+        SingletonBean singletonBean1 = ctx.getBean(SingletonBean.class);
+        System.out.println(singletonBean1.singletonBean());
+        SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
+        System.out.println(singletonBean2.singletonBean());
+
+        PrototypeBean prototypeBean1 = ctx.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean1.getPrototypeBean());
+        PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean2.getPrototypeBean());
+
     }
 
 }
